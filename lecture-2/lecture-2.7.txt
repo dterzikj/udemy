@@ -1,0 +1,12 @@
+- The absolute minimum requirement for WordPress to recognize your theme officially is by 
+creating 2 files name style.css and index.php along with a file header.
+
+- A file header is a block comment placed at the top of your files to let WordPress know more about 
+your theme/plugin. 
+
+- The information presented in a file header is called meta-information. Meta-information is
+formatted as name: value.
+
+- A 'Text Domain' is a unique ID for your translations.
+    Q: What is the difference between Text Domain and Domain?
+    A: 

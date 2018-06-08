@@ -1,0 +1,12 @@
+- XAMPP is a program that bundles programs together to create a functioning web server for web
+development on your computer.
+
+- Apache's HTTP Server will create a basic server that allows you to sent/receive requests
+
+- MariaDB is a database that stores information about anything you want. WordPress is 100%
+compatible with MySQL and MariaDB. All code will be compatible with MariaDB and MySQL. MariaDB
+is a version of MySQL. It is used because it is fast, scalable and roboust, with rich ecosystem of
+storage engines, plugins and many other tools.
+
+- The database prefix is prepended to every database table WordPress generates. For example,
+if a table is named posts and the prefix is wp_, then the new database name would be wp_posts.

@@ -1,0 +1,8 @@
+- It is always important to register scripts/stylesheets before enqueueing them. Registering will let Wordpress
+know about your files while enqueueing will instruct WordPress to lose the files.
+
+- Prefix your file handle names to avoid collision and naming conflicts with other plugins/themes.
+
+- Use the wp_head and wp_footer functions to instruct WordPress where to load your files.
+
+- It's important that you never override WordPress' default scripts such as jQuery.

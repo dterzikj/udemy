@@ -1,0 +1,19 @@
+- The Loop is a way to allow developers to loop through an array of posts. 
+The number posts in an array varies from page to page.
+
+- In order to use post thumbnails you have to add support for it by calling
+add_theme_support('post-thumbnails');
+
+- Template tags are functions that will retrieve information about the current
+page or post. They can be used inside or outside a loop.
+
+- Beware of using the_date() inside the loop. There are a lot of problems that
+come with this function. It is better to use the get_the_date() function
+instead. 
+
+- Post thumbnails come in various sizes. By default there 4 size aliases that
+WordPress defines for you. The original size of an image can be grabbed by using the 
+full size alias. 
+
+- WordPress provides 2 functions for pagination which are the previous_posts_link()
+and next_posts_link().

@@ -1,4 +1,4 @@
-- The wp-config.php file contains all youyr settings from database loginm details to debug
+- The wp-config.php file contains all your settings from database login details to debug
 settings and hashes.
 
 - You're free to modify the wp-config file without having to worry about it being overwritten

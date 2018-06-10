@@ -1,0 +1,8 @@
+- WordPress will search for a file called searchform.php and use it as a template 
+for the search form displayed inside the search widget. 
+
+- If the template is not found WordPress will automatically call the function
+get_search_form() which will generate a search form.
+
+- It's important that you set the method to GET and that the input field has
+a name of 's'. 

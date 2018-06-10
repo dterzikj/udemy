@@ -1,0 +1,10 @@
+- Sidebars can be placed inside their own template files called sidebar.php.
+You can grab a sidebar using the function get_sidebar().
+
+- Sidebars also follow the same naming convetions as the header and footer.
+
+- It's important that you keep your HTML/CSS for the widgets minimal as it can be hard
+to maintain with WordPress.
+
+- Make sure to check if a sidebar is active using the is_active_sidebar() function.
+And then call a dynamic_sidebar(). 

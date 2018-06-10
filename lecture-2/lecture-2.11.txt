@@ -1,0 +1,12 @@
+- You can use WordPress' built-in features by calling the add_theme_support()
+function and pass in the feature you would like to take advantage of.
+
+- Once the menu feature is active, then you can register a menu using the 
+register_nav_menu() function.
+
+- After a menu has been registered you can display it using the wp_nav_menu()
+function. If you have a menu with CSS classes for each item, then you'll need
+to use a custom walker to output those classes.
+
+- WordPress provides a few functions for translating strings. If WordPress
+does not find a translation, then WordPress will return the string as it is. 

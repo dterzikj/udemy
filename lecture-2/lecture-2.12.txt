@@ -1,0 +1,9 @@
+- Use the get_header() and get_footer() functions to load the header and the
+footer sections of your template respectively.
+
+- WordPress requires a certain naming convention for the header (header.php)
+and footer (footer.php) files.
+
+- If you have multiple header/footer files, then you can pass in an extension.
+
+- The body_class() function will load additional classes to the <body> tag.

@@ -283,5 +283,37 @@ the add_theme_support('custom-logo') function.
 - WP Quads is a plugin that will manage and display ads for you. Bundling plugins with your 
 theme can increase the value and flexibility of your theme. 
 
+   ###   lecture-2.25.txt   ###
+
+WordPress Customizer:
+    - Setting - a value that is saved in the database.
+    - Section - a way to group input fields together
+    - Controller - an input field that is usually placed inside a section and modifies one setting
+
+- The WordPress customizer allows users to modify a theme while also previewing those changes
+in real time.
+
+- The customizer is growing in popularity. A lot of developers are opting to use it because
+it's very easy to extend. 
+
+- There are 3 steps you'll go through when working with the customizer. The first step is to
+create a setting database value. The second step is creating a section that will contain all
+the controllers. The third step is to create a controller that is assigned under a section
+and updates a setting. 
+
+- To use a setting on your theme you need to call the function get_theme_mod($name) with the name 
+of the setting passed in as a the first parameter. The setting will be returnet so you 
+will need to echo it out if you need to display it. 
+
+   ###   lecture-2.26.txt   ###
+
+- You can create checkbox fields by setting the type key to checkbox.
+
+- The choices key is used to set the values for checkbox. The key will be the value of the 
+checkbox itself. The value will be the human readable text. 
+
+- The dropdown-pages will create a dropdown of all published paged on your WordPress site.
+
+- You can set the value to 0 to tell WordPress you do not want to select a page. 
 
 

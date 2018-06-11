@@ -1,0 +1,287 @@
+   ###   lecture-2.06.txt   ###   
+
+- The wp-config.php file contains all your settings from database login details to debug
+settings and hashes.
+
+- You're free to modify the wp-config file without having to worry about it being overwritten
+in the future updates.
+
+- The wp-includes folder contains functions and classes used throughout WordPress. 
+These functions and classes cannot go on their own, because the execution is happening
+somewhere else. The wp-admin file handles everything on the admin side of WordPress.
+
+- The wp-content folder contains all content created by the user and also stores all plugins and themes.
+
+
+   ###   lecture-2.07.txt   ###   
+
+- The absolute minimum requirement for WordPress to recognize your theme officially is by 
+creating 2 files name style.css and index.php along with a file header.
+
+- A file header is a block comment placed at the top of your files to let WordPress know more about 
+your theme/plugin. 
+
+- The information presented in a file header is called meta-information. Meta-information is
+formatted as name: value.
+
+- A 'Text Domain' is a unique ID for your translations.
+    Q: What is the difference between Text Domain and Domain?
+    A: 
+
+
+   ###   lecture-2.08.txt   ###   
+
+Problems with loading CSS from templates:
+    1. Users being able to actually change the default WordPress folder structure to suit their needs
+    rendering our fixed links useless.
+    2. We would also have to check if SSL is enabled. Forcing us to check if the protocil is 
+    https or http. 
+    3. Lastly, you'll end up loading all stylesheets and scripts on every page even if we do not need them.
+
+- WordPress will search for a file called functions.php. This file is completely optional. 
+You can add logic to do heavy lifting behind the scenes. you can group functionalities
+in several folders.
+
+- The developer tools allow you to diagnose and debug your site. The console tab will output 
+any messages and errors related to your site. In other words, INSPECT the page. 
+
+- Action hooks allow you to hook into certain events. If an event occurs, then any functions
+that hook into the event will be triggered. 
+    syntax: add_action($event, $function_to_be_executed, $priority, $arguments_accepted)
+    
+- It is important that you prefix your functions, classes and variables so you can avoid any 
+naming conflicts with other code from plugins and the WordPress core. 
+
+
+   ###   lecture-2.09.txt   ###   
+
+- It is always important to register scripts/stylesheets before enqueueing them. Registering will let Wordpress
+know about your files while enqueueing will instruct WordPress to lose the files.
+
+- Prefix your file handle names to avoid collision and naming conflicts with other plugins/themes.
+
+- Use the wp_head and wp_footer functions to instruct WordPress where to load your files.
+
+- It's important that you never override WordPress' default scripts such as jQuery.
+
+
+   ###   lecture-2.11.txt   ###   
+
+- You can use WordPress' built-in features by calling the add_theme_support()
+function and pass in the feature you would like to take advantage of.
+
+- Once the menu feature is active, then you can register a menu using the 
+register_nav_menu() function.
+
+- After a menu has been registered you can display it using the wp_nav_menu()
+function. If you have a menu with CSS classes for each item, then you'll need
+to use a custom walker to output those classes.
+
+- WordPress provides a few functions for translating strings, like __() and _e(). If WordPress
+does not find a translation, then WordPress will return the string as it is. 
+
+
+
+   ###   lecture-2.12.txt   ###   
+
+- Use the get_header() and get_footer() functions to load the header and the
+footer sections of your template respectively.
+
+- WordPress requires a certain naming convention for the header (header.php)
+and footer (footer.php) files.
+
+- If you have multiple header/footer files, then you can pass in an extension.
+
+- The body_class() function will load additional classes to the <body> tag.
+
+
+
+   ###   lecture-2.13.txt   ###   
+
+- Sidebars can be placed inside their own template files called sidebar.php.
+You can grab a sidebar using the function get_sidebar().
+
+- Sidebars also follow the same naming convetions as the header and footer.
+
+- It's important that you keep your HTML/CSS for the widgets minimal as it can be hard
+to maintain with WordPress.
+
+- Make sure to check if a sidebar is active using the is_active_sidebar() function.
+And then call a dynamic_sidebar(). 
+
+
+
+   ###   lecture-2.14.txt   ###   
+
+- WordPress will search for a file called searchform.php and use it as a template 
+for the search form displayed inside the search widget. 
+
+- If the template is not found WordPress will automatically call the function
+get_search_form() which will generate a search form.
+
+- It's important that you set the method to GET and that the input field has
+a name of 's'. 
+
+
+
+   ###   lecture-2.15.txt   ###   
+
+- The Loop is a way to allow developers to loop through an array of posts. 
+The number posts in an array varies from page to page.
+
+- In order to use post thumbnails you have to add support for it by calling
+add_theme_support('post-thumbnails');
+
+- Template tags are functions that will retrieve information about the current
+page or post. They can be used inside or outside a loop.
+
+- Beware of using the_date() inside the loop. There are a lot of problems that
+come with this function. It is better to use the get_the_date() function
+instead. 
+
+- Post thumbnails come in various sizes. By default there 4 size aliases that
+WordPress defines for you. The original size of an image can be grabbed by using the 
+full size alias. 
+
+- WordPress provides 2 functions for pagination which are the previous_posts_link()
+and next_posts_link().
+
+
+
+   ###   lecture-2.16.txt   ###   
+
+- The template hierarchy is what WordPress uses to determine what template
+file to load. The default template is the index.php file (remember diagram).
+
+- WordPress theme development codex provides recommendations for what each 
+template should have (like the one for the single post).
+
+- Quick tags allow you to insert code into a post that wil be dynamically changed
+depending on the quick tag used (like <!--nextpage-->, but wp_link_pages() should
+be used). The <!--nextpage--> quick tag allows you to paginate a post.  
+
+
+
+   ###   lecture-2.18.txt   ###   
+
+- You can create a template for comments by creating a file called comments.php
+
+- It's important to check if the current post is password protected using the
+post_password_required() function.
+
+- The comment_form() function will display a form while also taking the time to
+perform additional checks before displaying the form. 
+
+- WordPress saves all comments inside a global variable named comments which
+is available for access inside a loop. 
+
+
+
+   ###   lecture-2.19.txt   ###   
+
+- It's important to format text using the nl2br() function. This will make 
+long user bio's readable.
+
+- The get_avatar() function accepts a user ID, email or comment object as it's 
+first parameter. 
+
+
+
+   ###   lecture-2.20.txt   ###   
+
+Benefits of using the WP_Query class:
+	- To add a list of related posts under the current post for example
+	a list of all posts in the same category.
+
+	- To create two loops on the same page: for example a FAQ page
+	with the question titles at the top of the content beneath.
+
+	- To create a custom list of recent posts in the sidebar or footer
+	of your site, when the Recent Posts widget does not do what
+	you need (or you'd rather code it yourself).
+
+	- To create custom queries for taxonomies using more than one 
+	taxonomy to define what's displayed.
+
+	- To query post types which aren't output by the default query,
+	such as attachments. 
+
+Disadvantages of using the WP_Query Class:
+	- If all you want to do is change the way posts are being displayed
+	for a particular content type or archive, do not use WP_Query. Instead
+	simply create a template file for that archive or content type 
+	and modify the loop in that template file.
+	- If you want to display a few more or less posts than would 
+	normally be shown on an archive, do not use WP_Query to create
+	a whole new query. Instead use pre_get_posts to modify the main
+	query, along with a conditional tag to single out where 
+	exactly you want to do it.
+
+- The WP_Query class allows you to query the database for posts. The query
+automatically created and executed for you/
+
+- There are 2 kinds of loops. Main loops and secondary loops. Main loops are
+generated by WordPress. Secondary loops are created by you.
+
+- It's important that you manage your loops carefully. If you have to use 
+the loop multiple times, then you should make sure to reset it after you are
+finished.
+
+- The WP_Query class is very powerful. It's used in many themes and plugins multiple
+times. It's important that you make sure it's perfect for the job. 
+
+
+   ###   lecture-2.21.txt   ### 
+
+- WordPress will load a template called page.php for page templates.
+
+- Page templates tend to be more minimal version of a single post template, but it's completely up to
+the developer/designer. 
+
+- If you use the main loop multiple times, then you need to reset the loop every time using the
+rewind_posts() function. 
+
+- If you plan on integrating other plugins then it's always good to check if they are activated.
+One way of checking is by using the function_exists() function.  
+
+
+   ###   lecture-2.22.txt   ###
+
+- The official templates for 404 and category templates are 404.php and category.php files
+respectively.
+
+- To reuse the searchform template you can call the function get_search_form().
+
+- If you have elements that are the same across various templates then you may want to consider
+putting that code in it's own template.
+
+- To grab a reusable template you can call the function get_template_part().  
+
+
+   ###   lecture-2.23.txt   ### 
+
+- The search.php file is for search templates. It's important that you provide a form with
+the searched term. 
+
+- Custom template files allow you to give users the choice to choose different template designs.
+
+- You can name your templates whatever you want. It's best to be concise. To define it as
+a template you need to add header comments: Template Name for name and Template Post Type for 
+type (post, page, event, etc).
+
+- Custom templates can be applioed to multiple post types. This is a new feature in versions 4.7
+and above. 
+
+   ###   lecture-2.24.txt   ###
+
+- WordPress will generate the <title> tags for each page. You need to call the add_theme_support('title-tag')
+function. Do not use wp_title() function as it is deprecated.
+
+- WordPress will also handle processing the logo image upload. You need to add support for it using
+the add_theme_support('custom-logo') function.
+
+- WP Quads is a plugin that will manage and display ads for you. Bundling plugins with your 
+theme can increase the value and flexibility of your theme. 
+
+
+

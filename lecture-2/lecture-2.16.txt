@@ -1,9 +1,0 @@
-- The template hierarchy is what WordPress uses to determine what template
-file to load. The default template is the index.php file (remember diagram).
-
-- WordPress theme development codex provides recommendations for what each 
-template should have (like the one for the single post).
-
-- Quick tags allow you to insert code into a post that wil be dynamically changed
-depending on the quick tag used (like <!--nextpage-->, but wp_link_pages() should
-be used). The <!--nextpage--> quick tag allows you to paginate a post.  

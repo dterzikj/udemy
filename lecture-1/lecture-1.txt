@@ -1,0 +1,38 @@
+   ###   lecture-1.2.txt   ###   
+
+- There are 2 Wordpress domains. The .com domain is a hosting platform for WordPress. The .org domain
+is the official site for the WordPress software. 
+
+- The Codex is where WordPress documents it's features and some code. This resource is very user friendly.
+
+- The developer site is where WordPress documents the code  inside the core.Aimed at developers to learn more 
+about hooks and functions.
+
+- Automaticc is a company that does NOT own WordPress, but they do contribute heavily to the
+WordPress software itself and provides a hosting platform which is wordpress.com.
+
+
+   ###   lecture-1.3.txt   ###   
+
+- XAMPP is a program that bundles programs together to create a functioning web server for web
+development on your computer.
+
+- Apache's HTTP Server will create a basic server that allows you to sent/receive requests
+
+- MariaDB is a database that stores information about anything you want. WordPress is 100%
+compatible with MySQL and MariaDB. All code will be compatible with MariaDB and MySQL. MariaDB
+is a version of MySQL. It is used because it is fast, scalable and roboust, with rich ecosystem of
+storage engines, plugins and many other tools.
+
+- The database prefix is prepended to every database table WordPress generates. For example,
+if a table is named posts and the prefix is wp_, then the new database name would be wp_posts.
+
+
+   ###   lecture-1.4.txt   ###   
+
+- Alternatives to local web development environments are MAMP (not free) and WAMP (does not
+support php 7.x).
+
+- PHPStorm comes with various features that are useful for rapid web development.
+
+

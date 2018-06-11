@@ -1,5 +1,0 @@
-- It's important to format text using the nl2br() function. This will make 
-long user bio's readable.
-
-- The get_avatar() function accepts a user ID, email or comment object as it's 
-first parameter. 

@@ -1,4 +1,0 @@
-- Alternatives to local web development environments are MAMP (not free) and WAMP (does not
-support php 7.x).
-
-- PHPStorm comes with various features that are useful for rapid web development.

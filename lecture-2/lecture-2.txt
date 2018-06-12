@@ -347,10 +347,21 @@ as plugins are also able to extend and use formats.
 - oEmbed is a standard for embedded content. It's not a WordPress standard, but more of a web
 standard.   
 
-   ###   lecture-2.30.txt   ###
+   ###   lecture-2.30.txt and 31  ###
 
 - Conditional tags are a way to check what kind of page is being displayed (is_single or
 is_home).
+
+- The dir HTML attribute determines the direction text is displayed. Left-to-right is the
+default for most browsers, but right-to-left is also possible.
+
+- The lang HTML attribute will determine lagnuage used for the site.
+
+- The meta charset determines the character set that should be used for displaying the
+content of the site.
+
+- The post_class() function will output classes for the current post. It's also a good 
+idea to give each post a unique ID. 
 
 
 

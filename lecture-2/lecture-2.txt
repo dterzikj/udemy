@@ -317,3 +317,40 @@ checkbox itself. The value will be the human readable text.
 - You can set the value to 0 to tell WordPress you do not want to select a page. 
 
 
+
+   ###   lecture-2.27.txt   ###
+
+- The order WordPress organizes the customizer is Panels > Sections > Controller.
+
+- You are allowed to modify the current existing customizer by simply grabbing what you want 
+to modify with the appropriate get method and then changing the properties.
+
+- You can var_dump() the wp_customize object. It's a great way to learn and understand what's 
+being used inside the customizer. 
+
+- Setting the transport to postMessage WordPress will let you handle how content is reflected
+in the preview through JavaScript. Instead of reloading the website, it changes through the 
+browser and JavaScript. 
+
+
+
+   ###   lecture-2.29.txt   ###
+
+- Post formats are a way to specify what kind of content is inside the post. It is up to the 
+developer to decide what happens when a specific post format is selected.
+
+- Call the function get_post_format() to grab the current selected format of a post.
+
+- You do not have to use every format. However, it's recommended you make every format available
+as plugins are also able to extend and use formats. 
+
+- oEmbed is a standard for embedded content. It's not a WordPress standard, but more of a web
+standard.   
+
+   ###   lecture-2.30.txt   ###
+
+- Conditional tags are a way to check what kind of page is being displayed (is_single or
+is_home).
+
+
+

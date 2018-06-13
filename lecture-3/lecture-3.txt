@@ -152,3 +152,16 @@ and how long it took to load those files. It even provides information about eac
 individual file.
 
 - There are 2 hooks. The wp_ajax and wp_ajax_nopriv hooks. The nopriv version is users who are not logged in. 
+
+    ###   lecture-3.45.txt   ###
+
+- You can insert data using $wpdb->insert() method. This method will also sanitze all data
+and generate a proper query for you.
+
+- There are 3 formats which are string, integer and float. The format for string is %s, for integer
+is %d and for float is %f. 
+
+- WordPress provides a few method for executing custom queries. The get_var() method will execute 
+a custom query and return a single value from that query. 
+
+- the AVG() SQL function will average out all the values from a particular column. 

@@ -261,6 +261,8 @@ your hooks rathe than passing in a string.
 - The wp_mail() function will run the mail() function except it will call hooks to filter
 the data before sending out an email.
 
+
+
     ###   lecture-3.51.txt   ###
 
 - Nonces (Numbers only once) are a way to create tokens that you can use to verify the credibility
@@ -276,3 +278,19 @@ Example of manual authentication:
     do_action('wp_login', $user->user_login, $user);
 
 - Use the is_wp_error() to verify if an object is a WordPress object. 
+
+
+
+    ###   lecture-3.51.txt   ###
+
+- Use the wp_signon() function to authenticate a user with WordPress.
+
+- Be sure to check if the user has registration turned on. This setting 
+only applies to WordPress own registration form, but you should take 
+advantage of it anyway. 
+
+- All options are stored inside the options table. Plugins and transients
+are also stored inside this table.
+
+- It's always good practice to hide and display content depending if the user
+is a logged in or not. 

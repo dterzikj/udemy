@@ -191,7 +191,7 @@ a custom query and return a single value from that query.
 
     ###   lecture-3.47.txt   ### 
 
-- Widgets are called a ta weird time so make sure you include your widgets and functions 
+- Widgets are called at a weird time so make sure you include your widgets and functions 
 using the full system path.
 
 - You must extend the WP_Widget class so WordPress can assits you with setting up the widget.
@@ -263,7 +263,7 @@ the data before sending out an email.
 
 
 
-    ###   lecture-3.51.txt   ###
+    ###   lecture-3.52.txt   ###
 
 - Nonces (Numbers only once) are a way to create tokens that you can use to verify the credibility
 of a request.
@@ -281,7 +281,7 @@ Example of manual authentication:
 
 
 
-    ###   lecture-3.51.txt   ###
+    ###   lecture-3.53.txt   ###
 
 - Use the wp_signon() function to authenticate a user with WordPress.
 
@@ -294,3 +294,63 @@ are also stored inside this table.
 
 - It's always good practice to hide and display content depending if the user
 is a logged in or not. 
+
+
+    ###   lecture-3.54.txt   ###
+
+- The wpdb object has a prepare method that will sanitize queries. This is a great way 
+to prevent SQL injections.
+
+- The prepare method has a similar functionality to PHP's PDO prepare method or 
+MySQLi's prepare method. 
+
+
+
+    ###   lecture-3.55.txt   ###
+
+- WordPress provides 2 ways to hook into when a plugin is uninstalled from your site. 
+The recommended way is to create a uninstall.php file that will handle uninstallation.
+
+- It's good practice to check if WordPress is the one calling uninstall.php and not some 
+outside user.
+
+- It's good practice to clean up after yourself so a user does not have a bloated site 
+which can potentially lead to performance and security issues. 
+
+
+
+    ###   lecture-3.56.txt   ###
+
+- WordPress admin dashboard widgets allow you to give web owners a glance at what's going on 
+with your plugin. You can also use a dashboard widget to display news related to your plugin 
+or software. 
+
+- Call the wp_add_dashboard_widget() function to create a dashboard widget. 
+
+
+
+    ###   lecture-3.57.txt   ###
+
+- There are various methods and functions for retrieveing content outside of your site. Some 
+hosts will disable/enable these methods.
+
+- Rather than checking which method is available, you can use HTTP API to let WordPress decide 
+which method is best and available. 
+
+- WordPress will return the result of most requests as an array with various pieces of information
+about the response.
+
+- A lot of this information can be parsed for you using a set of utility functions provided 
+by WordPress. 
+
+
+
+    ###   lecture-3.58.txt   ###
+
+- The rewrite API is can potentially break your site if you are not careful.
+
+- WordPress uses the htaccess file to help generate SEO friendly URLs
+
+- You need to flush the rules everytime you plan on creating a new rewrite rules. 
+You can do this manually by updating the permalink settings or call the function 
+flush_rewrite_rules().

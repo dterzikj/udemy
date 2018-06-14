@@ -82,3 +82,14 @@ From there you can set the default role for a new user.
 are the add and edit forms.
 
 - The wp_get_post_terms() function will get the terms for a particular post and taxonomy. 
+
+
+
+   ###   lecture-4.69   ###
+
+- The custom post type UI plugin will help ou with generating custom 
+post types and taxonomies without having to write a single line of code.
+
+- The Advanced Custom Fields (ACF) plugin will help you generate custom 
+fields for certain post types. It can even create fields that aren't 
+normally possible with plain HTML.

@@ -1,0 +1,84 @@
+   ###   lecture-4.61   ###
+
+- The options API allows you to store settings and options for your theme/plugin. WordPress 
+use this API for it's own settings.
+
+- It's perfectly fine to create your own table as we did in the previous lecture. However, the API
+are meant to keep the database fairily minimal and easy to manage. So consider using an API
+before creating a table. 
+
+- Make sure to check if certain options exist before creating it. 
+
+
+   ###   lecture-4.62   ###
+
+- The hook to add an admin menu is the admin_menu hook. It's important you do not run this hook
+inside a function using the admin_init hook, since admin_init is called after admin_menu.
+
+- Capabilities determine what a user can ro cant do. Roles are a way to group capabilities 
+together. It's important that you check a user's capabilities rather than a role as 
+capabilities can be changed within a role. 
+
+- WordPress provides a class called wrap which helps positition the content of your admin page.
+
+
+
+   ###   lecture-4.63   ###
+
+- The admin_post is a dynamic hook. The name of the action from a request will be appended 
+to the hook to determine what function will run.
+
+- It's always good practice to check the capability of a user before executing any more code. 
+You can check a user's capability by using the function current_user_can().
+
+- You can redirect a user using the wp_redirect() function which accepts a URL.
+
+
+   ###   lecture-4.64   ###
+
+- The settings API will generate a form, process that form, and update your options for you.
+It's the preferred solution for developers who prefer to use pure PHP. 
+
+- The settings API has about 3 layers. The first layer is the page. The second layer would 
+be the sections related to a page. The third layer would be the input fields for a section.
+
+
+
+   ###   lecture-4.65   ###
+
+- WordPress provides an object called wp which provides a set of method and properties for 
+interacting with WordPress with Javascript. 
+
+- The WordPress media uploader will handle uploading images while also providing a simple UI 
+for browsing and selecting an image. 
+
+- To associate an image with a post you need to use a function called set_post_thumbnail(). 
+For uploading media you have to use wp_enqueue_media() before. 
+
+
+
+   ###   lecture-4.66   ###
+
+- Roles are a way to group capabilities for a user. A capability determines what a user can 
+or cant do.
+
+- Creating a role is very simple. You just call the add_role() function and pass in an array 
+of capabilities you would like a user to have. 
+
+- To se the default role you need to go to the admin dashboard Settings > General.
+From there you can set the default role for a new user. 
+
+
+   ###   lecture-4.67   ###
+
+- Taxinomies are a way to associate words or phrases with a single post. 
+
+- Each individual word or phrase is what WordPress calls a term. 
+
+
+   ###   lecture-4.68   ###
+
+- Taxonomies can have meta data and be extdended. There are 2 forms you need to account for which 
+are the add and edit forms.
+
+- The wp_get_post_terms() function will get the terms for a particular post and taxonomy. 

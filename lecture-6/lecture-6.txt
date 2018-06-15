@@ -1,0 +1,95 @@
+   ###   lecture-6.82   ###
+
+- You can detect if a user is on a mobile device using the wp_is_mobile() function. This function 
+is not completely fool proof as it may return false positives. 
+
+- WordPress will define numberous global variables from the database variable to variables 
+about the current user. 
+
+- The wp_trim_mobile() function is defined by WordPress which allows you to limit the 
+amount of words in a string.
+
+
+
+   ###   lecture-6.83   ###
+
+- WordPress provides 2 sets of hooks for editing and updating the user profiles. One set is
+to update their own profiles and another set is to allow users to modify other profiles. 
+
+- The URL must be live HTTP URL for avatars. Otherwise you will not be able to use custom 
+avatars.
+
+
+   ###   lecture-6.85   ###
+
+- You are allowed to modify the main query using a hook. The WP_Query class has a method 
+called set() which allows you to do this.
+
+- Keep in mind that the hook will be applied to all pages and not just the homepage. 
+Make sure to perform checks to see what page you're currently on.
+
+- The query_posts() function will also allow you to modify the main query, but 
+it's highly recommended you do not use it.
+
+
+   ###   lecture-6.88   ###
+
+Schema Properties:
+    - Itemscope - Tells bots and crawlers that the HTML element contains important information.
+    - Itemtype - a URL that provides more information about the kind of content to expect.
+    - Itemprop - How particular piece of information relates to the itemtype.
+
+- Microdata are attributes that you can apply to your elements to tell bots/crawlers more about 
+the content it's looking at. 
+
+   ###   lecture-6.89   ###
+
+- RTL stand for right-to-left.
+
+- It's optional to add support for RTL languages. You need to check if the site is set to RTL 
+using the is_rtl() function. If it is, then you'll need to use CSS to make everything appear RTL.
+
+
+   ###   lecture-6.90   ###
+
+- WordPress provides a set of instructions for unit testing your theme manually. It's a very 
+It's a very long process, but it can help catch bugs/problems you may have overlooked. 
+https://codex.wordpress.org/Theme_Unit_Test
+
+- ThemeForest has its own set of requirements before you submit your theme for commercial sale. 
+They have a very high standard of code quality.
+
+- The theme check plugin will scan your files for any errors, warnings and info about your theme.
+
+
+   ###   lecture-6.92   ###
+
+- Child themes allow you to modify a theme withoput having to modify the parent theme files. 
+Your code will be safe from being overriden as well. 
+
+- To create a child theme you need to set Template property to the parent theme folder.
+
+- It's important that you correctly load both parent and child theme CSS files. 
+
+
+
+   ###   lecture-6.93   ###
+
+- The process for translating a plugin/theme is called internationalization.
+
+- Translating WordPress can be time-consuming. It's recommended that you use a program like
+Po edit or Loco translate.
+
+- The .pot file is a template file translators can use as a start. The .po file is the 
+actual language file that will be compiled into .mo file. The .mo file is a server
+readable only file that contains all your translations. 
+
+
+   ###   lecture-6.94   ###
+
+- The TGM plugin activation class will help you with creating a UI and keeping track of what 
+plugins the user should install.
+
+- Plugins can come from anywhere. They can be hosted from WordPress or come bundled with your
+theme.
+
